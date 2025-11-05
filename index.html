@@ -1,0 +1,439 @@
+  <div id="welcomeSplash" style="position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(52,152,219,0.95);display:flex;align-items:center;justify-content:center;z-index:10002;flex-direction:column;transition:opacity 1s;">
+    <div id="namePrompt" style="display:flex;flex-direction:column;align-items:center;">
+      <h2 style="color:#fff;font-size:2em;font-weight:700;margin-bottom:18px;">Please enter your name:</h2>
+      <input id="userNameInput" type="text" placeholder="Your name" style="padding:12px 24px;font-size:1.2em;border-radius:8px;border:none;margin-bottom:18px;">
+      <button id="submitNameBtn" style="padding:10px 28px;background:#fff;color:#3498db;font-weight:bold;border:none;border-radius:8px;font-size:1.1em;cursor:pointer;">Continue</button>
+      <div id="genderPrompt" style="display:none;flex-direction:column;align-items:center;margin-top:18px;">
+        <h2 style="color:#fff;font-size:1.5em;font-weight:700;margin-bottom:12px;">Select your gender:</h2>
+        <div style="display:flex;gap:18px;">
+          <button id="maleBtn" style="padding:10px 28px;background:#fff;color:#3498db;font-weight:bold;border:none;border-radius:8px;font-size:1.1em;cursor:pointer;">MALE</button>
+          <button id="femaleBtn" style="padding:10px 28px;background:#fff;color:#e1306c;font-weight:bold;border:none;border-radius:8px;font-size:1.1em;cursor:pointer;">FEMALE</button>
+        </div>
+      </div>
+    </div>
+  <h1 id="welcomeMsg" style="color:#fff;font-size:3em;font-weight:900;letter-spacing:2px;text-shadow:0 2px 12px #222;display:none;">YOU ARE WELCOME</h1>
+  <h2 id="femaleMsg" style="color:#e1306c;font-size:2em;font-weight:700;display:none;margin-top:18px;">Special welcome to our female tech explorer!</h2>
+  </div>
+  <div id="topBanner" style="width:100vw;height:220px;overflow:hidden;position:relative;background:#222;display:flex;align-items:center;justify-content:center;">
+    <div id="bannerSlides" style="width:100vw;height:220px;position:absolute;top:0;left:0;">
+      <img src="/home/ampwerajavan/Downloads/banner1.jpg" alt="Tech Banner 1" style="width:100vw;height:220px;object-fit:cover;position:absolute;top:0;left:0;opacity:1;transition:opacity 1s;">
+      <img src="/home/ampwerajavan/Downloads/banner2.jpg" alt="Tech Banner 2" style="width:100vw;height:220px;object-fit:cover;position:absolute;top:0;left:0;opacity:0;transition:opacity 1s;">
+      <img src="/home/ampwerajavan/Downloads/banner3.jpg" alt="Tech Banner 3" style="width:100vw;height:220px;object-fit:cover;position:absolute;top:0;left:0;opacity:0;transition:opacity 1s;">
+    </div>
+    <div style="position:relative;z-index:2;text-align:center;width:100vw;">
+  <h1 style="color:#fff;font-size:2.5em;font-weight:900;letter-spacing:2px;text-shadow:0 2px 12px #222;">JAVAN TECH SKILLING CENTER</h1>
+    </div>
+  </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JAVAN TECHNOLOGIES - improve your skills</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body style="background: url('/home/ampwerajavan/Downloads/norman-foster-tulip-sky-bridge.webp') center center/cover no-repeat; background-blend-mode: lighten; min-height: 100vh; font-family: 'Montserrat', 'Poppins', Arial, sans-serif;">
+  <canvas id="bubblesCanvas" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:9997;"></canvas>
+    <canvas id="heartsCanvas" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:9998;display:none;"></canvas>
+  <header>
+    <div class="site-brand">
+      <h1>JAVAN TECHNOLOGIES</h1>
+      <p class="tagline">improve your tech skills now</p>
+    </div>
+    <nav>
+  <a href="index.html">Home</a>
+  <a href="music.html">Music</a>
+  <a href="lifestyle.html">Lifestyle</a>
+  <a href="videos.html">Videos</a>
+  <a href="technologies.html">Technologies</a>
+  <a href="education.html">Education</a>
+  <a href="health.html">Health</a>
+  <a href="news.html">News</a>
+  <a href="about.html" id="aboutBtn">About Us</a>
+  <a href="https://mbu.ug/" id="linksBtn" target="_blank" rel="noopener">Links</a>
+    </nav>
+    <form class="search-bar">
+      <input type="text" placeholder="Search Lugambo...">
+      <button type="submit">Search</button>
+    </form>
+  </header>
+  <main>
+    <section class="headlines">
+      <div style="text-align:center;margin-bottom:32px;">
+        <img src="/home/ampwerajavan/Downloads/gff.webp" alt="Outdoor portrait" style="width:320px;height:320px;border-radius:50%;object-fit:cover;box-shadow:0 8px 32px rgba(142,68,173,0.18);">
+      </div>
+      <button id="trendingBtn" style="padding:14px 32px;font-size:1.1em;font-weight:bold;background:#3498db;color:#fff;border:none;border-radius:12px;cursor:pointer;box-shadow:0 2px 8px rgba(52,152,219,0.15);margin-bottom:16px;">Trending Stories</button>
+      <button id="technologiesBtn" style="padding:14px 32px;font-size:1.1em;font-weight:bold;background:#8e44ad;color:#fff;border:none;border-radius:12px;cursor:pointer;box-shadow:0 2px 8px rgba(142,68,173,0.15);margin-bottom:16px;">TECHNOLOGIES</button>
+      <button id="sportsBtn" style="padding:14px 32px;font-size:1.1em;font-weight:bold;background:#27ae60;color:#fff;border:none;border-radius:12px;cursor:pointer;box-shadow:0 2px 8px rgba(39,174,96,0.15);margin-bottom:16px;">SPORTS</button>
+      <button id="educationBtn" style="padding:14px 32px;font-size:1.1em;font-weight:bold;background:#f39c12;color:#fff;border:none;border-radius:12px;cursor:pointer;box-shadow:0 2px 8px rgba(243,156,18,0.15);margin-bottom:16px;">EDUCATION</button>
+      <button id="healthBtn" style="padding:14px 32px;font-size:1.1em;font-weight:bold;background:#e74c3c;color:#fff;border:none;border-radius:12px;cursor:pointer;box-shadow:0 2px 8px rgba(231,76,60,0.15);margin-bottom:24px;">HEALTH</button>
+      <div id="trendingStories" style="display:none;">
+        <h2>Latest Headlines</h2>
+        <ul class="headline-list">
+          <li><a href="alien-skin.html">Alien Skin detained, police confirm</a></li>
+          <li><a href="patriko-mujuuka.html">Patriko Mujuuka denied NUP ticket</a></li>
+          <li><a href="jowy-landa.html">Jowy Landa’s unusual birthday wish</a></li>
+          <li><a href="ugandans-nightlife.html">Ugandans Win Big at Nightlife</a></li>
+          <li><a href="da-agent.html">Da Agent inspired by Kadodi</a></li>
+        </ul>
+      </div>
+      <div id="technologiesLinks" style="display:none;">
+        <h2>New Technologies</h2>
+        <ul class="tech-list">
+          <li><a href="ai-agriculture.html">AI Revolutionizes Ugandan Agriculture</a></li>
+          <li><a href="5g-rollout.html">5G Rollout Expands Internet Access</a></li>
+          <li><a href="fintech-startups.html">Startups Lead Fintech Innovation</a></li>
+          <li><a href="solar-schools.html">Solar Energy Powers Rural Schools</a></li>
+          <li><a href="electric-bus.html">Uganda’s First Electric Bus Launches</a></li>
+        </ul>
+      </div>
+      <div id="sportsLinks" style="display:none;">
+        <h2>Sports News</h2>
+        <ul class="sports-list">
+          <li><a href="cecafa-cup.html">Uganda Wins CECAFA Cup</a></li>
+          <li><a href="she-cranes.html">She Cranes Qualify for World Cup</a></li>
+          <li><a href="kcca-striker.html">KCCA FC Signs New Striker</a></li>
+          <li><a href="basketball-finals.html">National Basketball League Finals</a></li>
+        </ul>
+      </div>
+      <div id="educationLinks" style="display:none;">
+        <h2>Education Updates</h2>
+        <ul class="education-list">
+          <li><a href="e-learning.html">Govt Launches E-Learning Platform</a></li>
+          <li><a href="makerere-ranking.html">Makerere Ranked Top in Africa</a></li>
+          <li><a href="scholarships-2025.html">Scholarship Opportunities 2025</a></li>
+          <li><a href="stem-curriculum.html">New STEM Curriculum Announced</a></li>
+        </ul>
+      </div>
+      <div id="healthLinks" style="display:none;">
+        <h2>Health Headlines</h2>
+        <ul class="health-list">
+          <li><a href="covid-vaccination.html">COVID-19 Vaccination Drive</a></li>
+          <li><a href="malaria-campaign.html">Malaria Prevention Campaign</a></li>
+          <li><a href="mental-health.html">Mental Health Awareness Week</a></li>
+          <li><a href="gulu-hospital.html">New Hospital Opens in Gulu</a></li>
+        </ul>
+      </div>
+      <div id="featuredCarousel" style="position:fixed;bottom:24px;left:24px;z-index:10001;width:320px;height:120px;background:rgba(52,152,219,0.85);border-radius:18px;box-shadow:0 2px 8px rgba(52,152,219,0.18);overflow:hidden;display:flex;align-items:center;">
+        <div id="carouselContent" style="width:100%;padding:18px;color:#fff;font-size:1.1em;font-weight:bold;text-align:center;"></div>
+        <button id="carouselPrev" style="position:absolute;left:8px;top:50%;transform:translateY(-50%);background:#fff;color:#3498db;border:none;border-radius:50%;width:32px;height:32px;font-size:1.2em;cursor:pointer;">&#8592;</button>
+        <button id="carouselNext" style="position:absolute;right:8px;top:50%;transform:translateY(-50%);background:#fff;color:#3498db;border:none;border-radius:50%;width:32px;height:32px;font-size:1.2em;cursor:pointer;">&#8594;</button>
+      </div>
+      <div id="movingWord" style="display:flex;align-items:center;gap:18px;">
+        <img src="/home/ampwerajavan/Downloads/WhatsApp Image 2025-09-23 at 1.09.49 AM.jpeg" alt="Profile" style="width:48px;height:48px;border-radius:50%;object-fit:cover;box-shadow:0 2px 8px rgba(52,152,219,0.10);">
+        <span>JAVAN TECHNOLOGIES</span>
+      </div>
+      <div id="mapSection" style="position:fixed;top:400px;right:24px;z-index:10001;width:320px;height:180px;background:rgba(39,174,96,0.85);border-radius:18px;box-shadow:0 2px 8px rgba(39,174,96,0.18);padding:8px;">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=32.57,0.34,32.59,0.35&amp;layer=mapnik" style="width:100%;height:100%;border:none;border-radius:12px;"></iframe>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="social-links">
+      <a href="#">Facebook</a>
+      <a href="#">Twitter</a>
+      <a href="#">Instagram</a>
+      <a href="#">YouTube</a>
+      <a href="#">TikTok</a>
+    </div>
+    <div style="margin-top:8px;display:flex;gap:12px;justify-content:center;">
+      <a href="#" title="Facebook" style="font-size:1.5em;color:#3498db;"><span>&#xf09a;</span></a>
+      <a href="#" title="Twitter" style="font-size:1.5em;color:#1da1f2;"><span>&#xf099;</span></a>
+      <a href="#" title="Instagram" style="font-size:1.5em;color:#e1306c;"><span>&#xf16d;</span></a>
+      <a href="#" title="YouTube" style="font-size:1.5em;color:#ff0000;"><span>&#xf167;</span></a>
+      <a href="#" title="TikTok" style="font-size:1.5em;color:#000;"><span>&#xe07b;</span></a>
+    </div>
+    <div class="contact-info">
+      7, javan technologies | +256-200-932832 | javantechnologies@gmail.com
+    </div>
+    <div class="copyright">
+      © 2025 All Rights reserved. javantechnologies is a division of pine SOLUTIONS
+    </div>
+    <script>
+      // Welcome Splash Screen with Name
+      document.addEventListener('DOMContentLoaded', function() {
+        var splash = document.getElementById('welcomeSplash');
+        var namePrompt = document.getElementById('namePrompt');
+        var userNameInput = document.getElementById('userNameInput');
+        var submitNameBtn = document.getElementById('submitNameBtn');
+        var welcomeMsg = document.getElementById('welcomeMsg');
+        var genderPrompt = document.getElementById('genderPrompt');
+        var maleBtn = document.getElementById('maleBtn');
+        var femaleBtn = document.getElementById('femaleBtn');
+        var femaleMsg = document.getElementById('femaleMsg');
+        // Use localStorage to track splash completion
+        if (localStorage.getItem('splashDone')) {
+          if (splash) splash.style.display = 'none';
+        } else if (splash && namePrompt && userNameInput && submitNameBtn && welcomeMsg && genderPrompt && maleBtn && femaleBtn && femaleMsg) {
+          submitNameBtn.onclick = function() {
+            var name = userNameInput.value.trim();
+            if (name) {
+              userNameInput.style.border = '';
+              submitNameBtn.style.display = 'none';
+              userNameInput.style.display = 'none';
+              genderPrompt.style.display = 'flex';
+            } else {
+              userNameInput.style.border = '2px solid #e74c3c';
+              userNameInput.focus();
+              userNameInput.placeholder = 'Please enter your name';
+            }
+          };
+          userNameInput.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') submitNameBtn.click();
+          });
+          maleBtn.onclick = function() {
+            genderPrompt.style.display = 'none';
+            namePrompt.style.display = 'none';
+            welcomeMsg.textContent = 'YOU ARE WELCOME, ' + userNameInput.value.trim();
+            welcomeMsg.style.display = 'block';
+            femaleMsg.style.display = 'none';
+            setTimeout(function() {
+              splash.style.opacity = '0';
+              setTimeout(function() {
+                splash.style.display = 'none';
+                localStorage.setItem('splashDone', '1');
+              }, 1000);
+            }, 2200);
+          };
+          femaleBtn.onclick = function() {
+            genderPrompt.style.display = 'none';
+            namePrompt.style.display = 'none';
+            welcomeMsg.textContent = 'YOU ARE MOST LOVED, ' + userNameInput.value.trim();
+            welcomeMsg.style.display = 'block';
+            femaleMsg.style.display = 'none';
+            setTimeout(function() {
+              splash.style.opacity = '0';
+              setTimeout(function() {
+                splash.style.display = 'none';
+                localStorage.setItem('splashDone', '1');
+              }, 1000);
+            }, 2600);
+          };
+        }
+      });
+      // Animated Bubbles Effect
+      document.addEventListener('DOMContentLoaded', function() {
+        var bubblesCanvas = document.getElementById('bubblesCanvas');
+          var heartsCanvas = document.getElementById('heartsCanvas');
+        // Always show bubbles on homepage
+        if (bubblesCanvas) {
+          var ctx = bubblesCanvas.getContext('2d');
+          function resizeCanvas() {
+            bubblesCanvas.width = window.innerWidth;
+            bubblesCanvas.height = window.innerHeight;
+          }
+          resizeCanvas();
+          window.addEventListener('resize', resizeCanvas);
+          var bubbles = Array.from({length:40},()=>({
+            x:Math.random()*window.innerWidth,
+            y:Math.random()*window.innerHeight,
+            r:Math.random()*18+12,
+            dx:(Math.random()-0.5)*1.2,
+            dy:Math.random()*1.5+0.5,
+            color:`rgba(${Math.floor(Math.random()*200+55)},${Math.floor(Math.random()*200+55)},${Math.floor(Math.random()*200+55)},0.35)`
+          }));
+          function drawBubbles() {
+            ctx.clearRect(0,0,bubblesCanvas.width,bubblesCanvas.height);
+            bubbles.forEach(b=>{
+              ctx.beginPath();
+              ctx.arc(b.x,b.y,b.r,0,2*Math.PI);
+              ctx.fillStyle = b.color;
+              ctx.fill();
+              b.x += b.dx;
+              b.y -= b.dy;
+              if (b.x < -b.r) b.x = window.innerWidth+b.r;
+              if (b.x > window.innerWidth+b.r) b.x = -b.r;
+              if (b.y < -b.r) {
+                b.y = window.innerHeight+b.r;
+                b.x = Math.random()*window.innerWidth;
+              }
+            });
+            requestAnimationFrame(drawBubbles);
+          }
+          drawBubbles();
+        }
+          function startHearts() {
+            if (heartsCanvas) {
+              heartsCanvas.style.display = 'block';
+              var ctx = heartsCanvas.getContext('2d');
+              function resizeCanvas() {
+                heartsCanvas.width = window.innerWidth;
+                heartsCanvas.height = window.innerHeight;
+              }
+              resizeCanvas();
+              window.addEventListener('resize', resizeCanvas);
+              var hearts = Array.from({length:24},()=>({
+                x:Math.random()*window.innerWidth,
+                y:window.innerHeight+Math.random()*100,
+                size:Math.random()*32+18,
+                dx:(Math.random()-0.5)*1.2,
+                dy:Math.random()*1.2+0.7,
+                color:`rgba(225,48,108,0.7)`
+              }));
+              function drawHeart(ctx,x,y,size,color) {
+                ctx.save();
+                ctx.translate(x,y);
+                ctx.scale(size/32,size/32);
+                ctx.beginPath();
+                ctx.moveTo(16,29);
+                ctx.bezierCurveTo(2,18,2,6,16,6);
+                ctx.bezierCurveTo(30,6,30,18,16,29);
+                ctx.closePath();
+                ctx.fillStyle = color;
+                ctx.globalAlpha = 0.8;
+                ctx.fill();
+                ctx.globalAlpha = 1;
+                ctx.restore();
+              }
+              function drawHearts() {
+                ctx.clearRect(0,0,heartsCanvas.width,heartsCanvas.height);
+                hearts.forEach(h=>{
+                  drawHeart(ctx,h.x,h.y,h.size,h.color);
+                  h.x += h.dx;
+                  h.y -= h.dy;
+                  if (h.x < -h.size) h.x = window.innerWidth+h.size;
+                  if (h.x > window.innerWidth+h.size) h.x = -h.size;
+                  if (h.y < -h.size) {
+                    h.y = window.innerHeight+h.size;
+                    h.x = Math.random()*window.innerWidth;
+                  }
+                });
+                requestAnimationFrame(drawHearts);
+              }
+              drawHearts();
+            }
+          }
+      });
+      // Top Banner Slideshow
+      document.addEventListener('DOMContentLoaded', function() {
+        var slides = document.querySelectorAll('#bannerSlides img');
+        var current = 0;
+        setInterval(function() {
+          slides.forEach((img, i) => {
+            img.style.opacity = (i === current) ? '1' : '0';
+          });
+          current = (current + 1) % slides.length;
+        }, 3500);
+      });
+      document.addEventListener('DOMContentLoaded', function() {
+        // Animated Snowfall Effect
+        var canvas = document.getElementById('snowfall');
+        if (canvas) {
+          var ctx = canvas.getContext('2d');
+          var W = window.innerWidth, H = window.innerHeight;
+          canvas.width = W; canvas.height = H;
+          var snowflakes = Array.from({length:60},()=>({x:Math.random()*W,y:Math.random()*H,r:Math.random()*3+2,s:Math.random()*2+1}));
+          function drawSnow() {
+            ctx.clearRect(0,0,W,H);
+            snowflakes.forEach(f=>{
+              ctx.beginPath();
+              ctx.arc(f.x,f.y,f.r,0,2*Math.PI);
+              ctx.fillStyle = '#fff';
+              ctx.globalAlpha = 0.7;
+              ctx.fill();
+              ctx.globalAlpha = 1;
+              f.y += f.s;
+              if (f.y > H) { f.y = -f.r; f.x = Math.random()*W; }
+            });
+            requestAnimationFrame(drawSnow);
+          }
+          drawSnow();
+        }
+        // Featured Story Carousel
+        var carouselStories = [
+          {title:'Alien Skin detained, police confirm',link:'alien-skin.html'},
+          {title:'AI Revolutionizes Ugandan Agriculture',link:'ai-agriculture.html'},
+          {title:'Uganda Wins CECAFA Cup',link:'cecafa-cup.html'},
+          {title:'Govt Launches E-Learning Platform',link:'e-learning.html'},
+          {title:'COVID-19 Vaccination Drive',link:'covid-vaccination.html'}
+        ];
+        var carouselIdx = 0;
+        function showCarousel(idx) {
+          var c = carouselStories[idx];
+          var cc = document.getElementById('carouselContent');
+          if (cc) cc.innerHTML = `<a href="${c.link}" style="color:#fff;text-decoration:underline;">${c.title}</a>`;
+        }
+        showCarousel(carouselIdx);
+        document.getElementById('carouselPrev').onclick = function() {
+          carouselIdx = (carouselIdx-1+carouselStories.length)%carouselStories.length;
+          showCarousel(carouselIdx);
+        };
+        document.getElementById('carouselNext').onclick = function() {
+          carouselIdx = (carouselIdx+1)%carouselStories.length;
+          showCarousel(carouselIdx);
+        };
+        // Toggle hidden links
+        var trendingBtn = document.getElementById('trendingBtn');
+        var trendingStories = document.getElementById('trendingStories');
+        var techBtn = document.getElementById('technologiesBtn');
+        var techLinks = document.getElementById('technologiesLinks');
+        var sportsBtn = document.getElementById('sportsBtn');
+        var sportsLinks = document.getElementById('sportsLinks');
+        var educationBtn = document.getElementById('educationBtn');
+        var educationLinks = document.getElementById('educationLinks');
+        var healthBtn = document.getElementById('healthBtn');
+        var healthLinks = document.getElementById('healthLinks');
+        if (trendingStories) trendingStories.style.display = 'none';
+        if (techLinks) techLinks.style.display = 'none';
+        if (sportsLinks) sportsLinks.style.display = 'none';
+        if (educationLinks) educationLinks.style.display = 'none';
+        if (healthLinks) healthLinks.style.display = 'none';
+        if (trendingBtn && trendingStories) {
+          trendingBtn.addEventListener('click', function() {
+            trendingStories.style.display = trendingStories.style.display === 'none' ? 'block' : 'none';
+          });
+        }
+        if (techBtn && techLinks) {
+          techBtn.addEventListener('click', function() {
+            techLinks.style.display = techLinks.style.display === 'none' ? 'block' : 'none';
+          });
+        }
+        if (sportsBtn && sportsLinks) {
+          sportsBtn.addEventListener('click', function() {
+            sportsLinks.style.display = sportsLinks.style.display === 'none' ? 'block' : 'none';
+          });
+        }
+        if (educationBtn && educationLinks) {
+          educationBtn.addEventListener('click', function() {
+            educationLinks.style.display = educationLinks.style.display === 'none' ? 'block' : 'none';
+          });
+        }
+        if (healthBtn && healthLinks) {
+          healthBtn.addEventListener('click', function() {
+            healthLinks.style.display = healthLinks.style.display === 'none' ? 'block' : 'none';
+          });
+        }
+        // Moving word snake-like animation
+        var movingWord = document.getElementById('movingWord');
+        if (movingWord) {
+          let pos = -movingWord.offsetWidth;
+          let amplitude = 40; // vertical wave height
+          let frequency = 0.012; // wave frequency
+          let baseTop = 32;
+          function animateSnake() {
+            pos += 2;
+            if (pos > window.innerWidth) pos = -movingWord.offsetWidth;
+            let wave = Math.sin(pos * frequency) * amplitude;
+            movingWord.style.left = pos + 'px';
+            movingWord.style.top = (baseTop + wave) + 'px';
+            requestAnimationFrame(animateSnake);
+          }
+          movingWord.style.position = 'fixed';
+          movingWord.style.top = baseTop + 'px';
+          movingWord.style.left = '-300px';
+          movingWord.style.zIndex = '9999';
+          movingWord.style.fontSize = '2em';
+          movingWord.style.fontWeight = 'bold';
+          movingWord.style.color = '#fff';
+          movingWord.style.background = 'linear-gradient(90deg, #3498db 0%, #8e44ad 100%)';
+          movingWord.style.padding = '12px 32px';
+          movingWord.style.borderRadius = '18px';
+          movingWord.style.boxShadow = '0 4px 24px rgba(52,152,219,0.15)';
+          animateSnake();
+        }
+      });
+    </script>
+  </footer>
+</body>
+</html>
